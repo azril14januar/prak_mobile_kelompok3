@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 import 'package:pertemuan_v/configs/app_routes.dart';
+import 'package:pertemuan_v/models/news.dart';
 
 import '../../../../models/user.dart';
 
@@ -35,8 +36,8 @@ class HomeFragmentWidget {
     );
   }
 
-  static latestNewsCard(Size size, int i) {
-    return LatestNewsCard(size: size, i: i);
+  static latestNewsCard(Size size,News news) {
+    return LatestNewsCard(size: size, news: news);
   }
 
   static latestNewsSection(Size size) {
@@ -203,11 +204,11 @@ class LatestNewsCard extends StatelessWidget {
   const LatestNewsCard({
     super.key,
     required this.size,
-    required this.i,
+    required this.news,
   });
 
   final Size size;
-  final int i;
+  final News news;
 
   @override
   Widget build(BuildContext context) {
@@ -231,8 +232,9 @@ class LatestNewsCard extends StatelessWidget {
               GoRouter.of(context).goNamed(
                 AppRoutes.newsDetail,
                 params: {
-                  "id": i.toString(),
+                  "id": news.id.toString(),
                 },
+                extra: news,
               );
             },
             child: Row(
@@ -247,7 +249,7 @@ class LatestNewsCard extends StatelessWidget {
                     child: AspectRatio(
                       aspectRatio: 1 / 1,
                       child: Image.network(
-                        "https://picsum.photos/200",
+                        news.banner
                       ),
                     ),
                   ),
@@ -256,7 +258,7 @@ class LatestNewsCard extends StatelessWidget {
                   child: Padding(
                     padding: const EdgeInsets.all(8.0),
                     child: Text(
-                      "${i + 1}. Laboris fugiat eiusmod consequat aliqua eiusmod.",
+                      news.title
                     ),
                   ),
                 ),
@@ -284,13 +286,7 @@ class LatestNewsSection extends StatelessWidget {
   Widget build(BuildContext context) {
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
-      children: [
-        for (int i = 0; i < 10; i++)
-          LatestNewsCard(
-            size: size,
-            i: i,
-          ),
-      ],
+      children: newsList.map((e) => LatestNewsCard(size: size, news: e)).toList()
     );
   }
 }

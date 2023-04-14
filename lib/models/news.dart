@@ -1,6 +1,6 @@
 class News {
-  int id;
-  String likeCount, title, author, banner, date, desc;
+  int id, likeCount;
+  String title, author, banner, date, desc;
 
   News(
       {required this.id,
@@ -15,7 +15,7 @@ class News {
 var newsList = [
   News(
     id: 1, 
-    likeCount: "1.1k", 
+    likeCount: 100000, 
     title: "[Exclusive] 'Deleting Shinnara, is it possible?'... Limitations and alternatives to boycott in the music industry,", 
     author: "Kim Jojo", 
     banner: "https://dispatch.cdnser.be/cms-content/uploads/2023/04/05/e3a345e5-8758-48f4-963e-b29017d0cb5a.png", 
