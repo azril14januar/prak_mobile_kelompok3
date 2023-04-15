@@ -155,9 +155,8 @@ class _HomeScreenState extends State<HomeScreen> {
               onTap: () {
                 GoRouter.of(context).goNamed(
                   AppRoutes.profileDetail,
-                  extra: User.dummy()
-                ); 
-                
+                  extra: User.dummy(),
+                );
               },
               child: Container(
                 padding: const EdgeInsets.all(8),

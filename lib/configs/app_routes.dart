@@ -1,10 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
+import 'package:pertemuan_v/models/user.dart';
 import 'package:pertemuan_v/modules/home_screen/home_screen.dart';
 import 'package:pertemuan_v/modules/news_detail_screen/news_detail_screen.dart';
 import 'package:pertemuan_v/modules/profile_detail/profile_detail.dart';
 import 'package:pertemuan_v/modules/splash_screen/splash_screen.dart';
 
+import '../models/news.dart';
 import '../models/user.dart';
 
 class AppRoutes {
@@ -19,19 +21,21 @@ class AppRoutes {
     );
   }
 
-  static Page _profileScreenBuilder(BuildContext context, GoRouterState state) {
-    late User user;
-    if (state.extra != null && state.extra is User) {
-      user = state.extra as User;
-    } else {
-      user = User.dummy();
-    }
+   static Page _profileScreenBuilder(BuildContext context, GoRouterState state) {
+      late User user;
+      if (state.extra != null && state.extra is User){
+          user = state.extra as User;
+      }  else {
+        user = User.dummy(); 
+      }
+    
     return MaterialPage(
       child: ProfileDetail(
-        user: user,
+        user: user
       ),
     );
   }
+
 
   static Page _homeScreenBuilder(BuildContext context, GoRouterState state) {
     return const MaterialPage(
@@ -46,6 +50,7 @@ class AppRoutes {
     return MaterialPage(
       child: NewsDetailScreen(
         id: state.params["id"]!,
+        news: state.extra as News,
       ),
     );
   }
@@ -62,6 +67,11 @@ class AppRoutes {
         path: "/home",
         pageBuilder: _homeScreenBuilder,
         routes: [
+          GoRoute(
+            name: newsDetail,
+            path: "news-detail:id",
+            pageBuilder: _newsDetailScreenBuilder,
+          ),
           GoRoute(
             name: profileDetail,
             path: "profile-detail",

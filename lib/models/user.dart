@@ -29,9 +29,9 @@ class User {
   factory User.dummy() {
     return User(
       id: 001,
-      name: "Kelompok 3",
-      username: "kelompok_thebest",
-      email: "kelompok3@email.com",
+      name: "Team3",
+      username: "theteam3",
+      email: "team3@email.com",
       profilePhoto:
           "https://tse4.mm.bing.net/th?id=OIP.5OZLhPrTsZXQOx48SILe_gHaLR&pid=Api&P=0",
       phoneNumber: "085123456789",
