@@ -22,7 +22,7 @@ class NewsFragment extends StatelessWidget {
                       isDense: true,
                       hintText: "Masukkan kata kunci disini",
                       filled: true,
-                      fillColor: Colors.grey[200],
+                      fillColor: Colors.grey[1000],
                       border: OutlineInputBorder(
                         borderSide: BorderSide.none,
                         borderRadius: BorderRadius.circular(16),

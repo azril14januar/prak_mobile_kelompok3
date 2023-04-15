@@ -101,7 +101,7 @@ class SearchFieldWidget extends StatelessWidget {
         isDense: true,
         hintText: "Masukkan kata kunci disini",
         filled: true,
-        fillColor: Colors.grey[200],
+        fillColor: Colors.grey[1000],
         border: OutlineInputBorder(
           borderSide: BorderSide.none,
           borderRadius: BorderRadius.circular(16),
@@ -175,7 +175,7 @@ class HotestNewsCard extends StatelessWidget {
             height: 50,
             width: size.width - 32,
             decoration: BoxDecoration(
-              color: Colors.white.withOpacity(0.5),
+              color: Colors.grey.withOpacity(0.5),
               borderRadius: const BorderRadius.only(
                 bottomLeft: Radius.circular(16),
                 bottomRight: Radius.circular(16),
@@ -191,7 +191,7 @@ class HotestNewsCard extends StatelessWidget {
             style: const TextStyle(
               fontSize: 16,
               fontWeight: FontWeight.bold,
-              color: Colors.black,
+              color: Color.fromARGB(255, 48, 45, 45),
             ),
           ),
         ),
@@ -219,7 +219,7 @@ class LatestNewsCard extends StatelessWidget {
             borderRadius: BorderRadius.circular(
               8,
             ),
-            color: Colors.white,
+            color: Colors.grey[1000],
             boxShadow: const [
               BoxShadow(
                 spreadRadius: 1,

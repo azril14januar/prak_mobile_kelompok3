@@ -120,7 +120,7 @@ class _NewsDetailScreenState extends State<NewsDetailScreen> {
                         Container(
                           margin: const EdgeInsets.only(left: 20),
                           child: Text(
-                            widget.news!.desc,
+                            widget.news!.description,
                             textAlign: TextAlign.justify,
                             style: const TextStyle(
                               fontSize: 14,

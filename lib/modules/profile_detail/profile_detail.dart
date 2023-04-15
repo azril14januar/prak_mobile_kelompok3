@@ -46,7 +46,7 @@ class _ProfileDetailState extends State<ProfileDetail> {
                   child: Container(
                     padding: EdgeInsets.all(8),
                     decoration: BoxDecoration(
-                      color: Colors.blue.withAlpha(100),
+                      color: Color.fromARGB(255, 56, 158, 242),
                       borderRadius: BorderRadius.circular(8),
                     ),
                     child: Icon(Icons.chevron_left_rounded),
@@ -150,7 +150,7 @@ class _ProfileDetailState extends State<ProfileDetail> {
               padding: EdgeInsets.all(16),
               width: double.infinity,
               decoration: BoxDecoration(
-                color: Colors.blue,
+                color: Color.fromARGB(255, 56, 158, 242),
                 borderRadius: BorderRadius.circular(13),
               ),
               child: Center(

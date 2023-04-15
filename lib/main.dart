@@ -13,6 +13,12 @@ class MyApp extends StatelessWidget {
     return MaterialApp.router(
       debugShowCheckedModeBanner: false,
       title: "DISPATCH",
+      themeMode: ThemeMode.dark, // menambahkan properti themeMode
+      darkTheme: ThemeData( // menambahkan tema gelap
+        brightness: Brightness.dark,
+        primaryColor: Colors.blueGrey[900],
+        accentColor: Colors.blueAccent,
+      ),
       routerDelegate: AppRoutes.goRouter.routerDelegate,
       routeInformationParser: AppRoutes.goRouter.routeInformationParser,
       routeInformationProvider: AppRoutes.goRouter.routeInformationProvider,
