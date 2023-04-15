@@ -72,8 +72,8 @@ class _HomeFragmentState extends State<HomeFragment> {
                     ),
                     child: HomeFragmentWidget.hotestNewsCard(
                       size,
-                      "https://picsum.photos/1080/690",
-                      "Lebaran Sebentar Lagi",
+                      "https://dispatch.cdnser.be/cms-content/uploads/2023/04/15/9d05f1c0-bf96-4ab2-8218-1ca0ccf0a5fc.jpeg",
+                      "Lee Je-hoon's 'I hope you can come back for season 3'",
                     ),
                   ),
                   const SizedBox(
