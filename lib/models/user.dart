@@ -30,7 +30,7 @@ class User {
     return User(
       id: 001,
       name: "Kelompok 3",
-      username: "klmpk3_thebest",
+      username: "kelompok_thebest",
       email: "kelompok3@email.com",
       profilePhoto:
           "https://tse4.mm.bing.net/th?id=OIP.5OZLhPrTsZXQOx48SILe_gHaLR&pid=Api&P=0",
